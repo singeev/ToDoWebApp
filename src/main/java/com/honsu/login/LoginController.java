@@ -25,7 +25,7 @@ public class LoginController {
         if(service.isUserValid(name, password)){
             model.put("name", name);
             model.put("password", password);
-            return "welcome";
+            return "todo-list";
         } else {
             model.put("errorMessage", "Invalid Credentials!");
             return "login";
