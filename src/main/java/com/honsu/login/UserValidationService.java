@@ -1,5 +1,8 @@
-package com.honsu;
+package com.honsu.login;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserValidationService {
 
     public boolean isUserValid(String name, String pass){
