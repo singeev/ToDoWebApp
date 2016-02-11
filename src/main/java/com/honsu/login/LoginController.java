@@ -6,8 +6,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("name")
 public class LoginController {
     @Autowired
     UserValidationService service;
@@ -25,7 +27,7 @@ public class LoginController {
         if(service.isUserValid(name, password)){
             model.put("name", name);
             model.put("password", password);
-            return "todo-list";
+            return "welcome";
         } else {
             model.put("errorMessage", "Invalid Credentials!");
             return "login";
