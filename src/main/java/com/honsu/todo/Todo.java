@@ -1,13 +1,18 @@
 package com.honsu.todo;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class Todo {
     private int id;
     private String user;
+
+    @Size(min = 6, message = "Enter at least 6 characters!")
     private String desc;
     private Date targetDate;
     private boolean isDone;
+
+    public Todo(){}
 
     public Todo(int id, String user, String desc, Date targetDate, boolean isDone) {
         this.id = id;
